@@ -35,6 +35,9 @@ env:
       - databases.default.default.database=sites/default/files/.ht.sqlite
       - 'databases.default.default.namespace=Drupal\sqlite\Driver\Database\sqlite'
       - databases.default.default.autoload=core/modules/sqlite/src/Driver/Database/sqlite/
+  # A recommended-project scaffold names no database driver until its installer
+  # runs, so nothing is detected; wire it to MySQL. Older binaries ignore this.
+  default_service: mysql
   services:
     mysql:
       detect:
