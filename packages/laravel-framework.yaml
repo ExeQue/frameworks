@@ -1,0 +1,49 @@
+package: laravel/framework
+
+# The phases of a Laravel request, timed so the Requests lens can show where
+# the time went: booting the app, matching the route, the middleware stack and
+# the controller inside it, each view rendered, and the work done after the
+# response went out. Every method has kept its name since Laravel 5, so one
+# file covers every major, and Lumen and Statamic on top of it. The session is
+# read as the store saves it, which is what it holds when the request is done,
+# and the matched route's name is read as the route binds to the request.
+devtools:
+  captures:
+    - kind: span
+      class: Illuminate\Foundation\Http\Kernel
+      method: bootstrap
+      label: Bootstrap
+    - kind: span
+      class: Illuminate\Foundation\Console\Kernel
+      method: bootstrap
+      label: Bootstrap
+    - kind: span
+      class: Illuminate\Routing\Router
+      method: findRoute
+      label: Routing
+    - kind: span
+      class: Illuminate\Routing\Router
+      method: runRouteWithinStack
+      label: Middleware
+    - kind: span
+      class: Illuminate\Routing\Route
+      method: run
+      name: this.method:getActionName
+      label: Controller
+    - kind: span
+      class: Illuminate\View\View
+      method: render
+      name: this.method:name
+      label: View
+    - kind: span
+      class: Illuminate\Foundation\Http\Kernel
+      method: terminate
+      label: Terminate
+    - kind: session
+      class: Illuminate\Session\Store
+      method: save
+      name: this.method:getName
+    - kind: route
+      class: Illuminate\Routing\Route
+      method: bind
+      name: this.method:getName

@@ -241,6 +241,26 @@ Pick a method whose arguments are declared parameters, since a variadic one
 carries them where the capture cannot read them. A kind lerd does not know is
 ignored, so a seam can be published before the release that reads it.
 
+A `span` seam times the call instead, for a phase of the app's own work that
+the Requests lens should draw on a request's waterfall. `label` is the fixed text
+the phase is shown as, and `name` optionally adds what varies per call, using the
+same `this` / `arg:N` expressions a job seam takes:
+
+```yaml
+devtools:
+  captures:
+    - kind: span
+      class: Illuminate\Routing\Route
+      method: run
+      name: this.method:getActionName
+      label: Controller
+```
+
+A `session` seam names the method a session store saves with; lerd calls the
+store's `all()` there and shows what the session held on the request it ran in.
+A `route` seam names a method the matched route passes through, with `name`
+resolving to the route's own name, which the Requests lens shows beside the URI.
+
 When a major of the package itself changes what lerd runs, give that major its
 own file, `<vendor>-<name>@<major>.yaml`, and list the majors in the index entry
 (`{"name": "drush/drush", "versions": ["13", "11"], "latest": "13"}`). A

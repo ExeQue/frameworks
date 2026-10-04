@@ -1,0 +1,23 @@
+package: symfony/http-kernel
+
+# The phases of a request on an HttpKernel app: booting the kernel, the router
+# listener matching the route, handling the request (listeners, controller and
+# the view listeners after it) and the work done after the response went out.
+devtools:
+  captures:
+    - kind: span
+      class: Symfony\Component\HttpKernel\Kernel
+      method: boot
+      label: Bootstrap
+    - kind: span
+      class: Symfony\Component\HttpKernel\EventListener\RouterListener
+      method: onKernelRequest
+      label: Routing
+    - kind: span
+      class: Symfony\Component\HttpKernel\HttpKernel
+      method: handleRaw
+      label: Handle
+    - kind: span
+      class: Symfony\Component\HttpKernel\Kernel
+      method: terminate
+      label: Terminate
