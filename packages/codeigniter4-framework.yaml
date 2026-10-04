@@ -1,0 +1,49 @@
+package: codeigniter4/framework
+
+# The phases of a CodeIgniter 4 request: building the app, matching the route,
+# the required and route filters, the controller, each view and sending the
+# response, with Handle around routing, filters and the controller. The
+# controller is named by its class, as the method sits on a protected property,
+# and the route by the pattern it matched.
+devtools:
+  captures:
+    - kind: span
+      class: CodeIgniter\Boot
+      method: initializeCodeIgniter
+      label: Bootstrap
+    - kind: span
+      class: CodeIgniter\CodeIgniter
+      method: tryToRouteIt
+      label: Routing
+    - kind: span
+      class: CodeIgniter\CodeIgniter
+      method: handleRequest
+      label: Handle
+    - kind: span
+      class: CodeIgniter\Filters\Filters
+      method: run
+      name: arg:2
+      label: Middleware
+    - kind: span
+      class: CodeIgniter\Filters\Filters
+      method: runRequired
+      name: arg:1
+      label: Middleware
+    - kind: span
+      class: CodeIgniter\CodeIgniter
+      method: runController
+      name: arg:1
+      label: Controller
+    - kind: span
+      implements: CodeIgniter\View\RendererInterface
+      method: render
+      name: arg:1
+      label: View
+    - kind: span
+      implements: CodeIgniter\HTTP\ResponseInterface
+      method: send
+      label: Send response
+    - kind: route
+      class: CodeIgniter\Router\Router
+      method: setMatchedRoute
+      name: arg:1

@@ -140,9 +140,12 @@
   ],
   "packages": [
     {"name": "apache-solr-for-typo3/solr"},
+    {"name": "cakephp/authentication"},
     {"name": "cakephp/migrations"},
     {"name": "cakephp/queue"},
+    {"name": "codeigniter4/framework"},
     {"name": "codeigniter4/queue"},
+    {"name": "codeigniter4/shield"},
     {"name": "doctrine/doctrine-fixtures-bundle"},
     {"name": "doctrine/doctrine-migrations-bundle"},
     {"name": "doctrine/mongodb-odm-bundle"},
@@ -165,8 +168,8 @@
     {"name": "laravel/horizon"},
     {"name": "laravel/reverb"},
     {"name": "league/flysystem"},
-    {"name": "lerd/debug"},
     {"name": "league/flysystem-aws-s3-v3"},
+    {"name": "lerd/debug"},
     {"name": "livewire/livewire"},
     {"name": "meilisearch/meilisearch-php"},
     {"name": "meilisearch/search-bundle"},
@@ -200,9 +203,11 @@
     {"name": "symfony/security-core"},
     {"name": "tempest/command-bus"},
     {"name": "tempest/database"},
+    {"name": "tempest/framework"},
     {"name": "twig/twig"},
     {"name": "typesense/typesense-php"},
     {"name": "typo3/cms-scheduler"},
-    {"name": "vladimir-yuldashev/laravel-queue-rabbitmq"}
+    {"name": "vladimir-yuldashev/laravel-queue-rabbitmq"},
+    {"name": "yiisoft/yii2"}
   ]
 }
