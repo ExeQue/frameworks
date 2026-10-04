@@ -261,6 +261,11 @@ store's `all()` there and shows what the session held on the request it ran in.
 A `route` seam names a method the matched route passes through, with `name`
 resolving to the route's own name, which the Requests lens shows beside the URI.
 
+`exclude_commands` lists console commands that only loop, a queue worker or a
+websocket server, as typed (`queue:work`) or by class. The Debug window reports
+the jobs such a command runs, each as its own process, and leaves the loop out.
+A project adds its own under `debug.exclude_commands` in `.lerd.yaml`.
+
 When a major of the package itself changes what lerd runs, give that major its
 own file, `<vendor>-<name>@<major>.yaml`, and list the majors in the index entry
 (`{"name": "drush/drush", "versions": ["13", "11"], "latest": "13"}`). A

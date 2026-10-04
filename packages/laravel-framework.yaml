@@ -4,10 +4,16 @@ package: laravel/framework
 # the time went: booting the app, matching the route, the middleware stack and
 # the controller inside it, each view rendered, and the work done after the
 # response went out. Every method has kept its name since Laravel 5, so one
-# file covers every major, and Lumen and Statamic on top of it. The session is
-# read as the store saves it, which is what it holds when the request is done,
-# and the matched route's name is read as the route binds to the request.
+# file covers every major, and Lumen and Statamic on top of it.
+#
+# The controller is named by the action it runs, a closure by the file and line
+# it was written on, and a Livewire page by its component rather than the page
+# controller Livewire routes it through. The session is read as the store saves
+# it, which is what it holds when the request is done, and the matched route's
+# name is read as the route binds to the request. The queue and schedule
+# workers only loop, so the Debug window reports the jobs they run and not them.
 devtools:
+  exclude_commands: [queue:work, queue:listen, schedule:work]
   captures:
     - kind: span
       class: Illuminate\Foundation\Http\Kernel
@@ -28,7 +34,7 @@ devtools:
     - kind: span
       class: Illuminate\Routing\Route
       method: run
-      name: this.method:getActionName
+      name: this.prop:action.livewire_component,this.prop:action.uses
       label: Controller
     - kind: span
       class: Illuminate\View\View
