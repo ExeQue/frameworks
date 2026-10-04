@@ -164,6 +164,7 @@
     {"name": "laravel/framework"},
     {"name": "laravel/horizon"},
     {"name": "laravel/reverb"},
+    {"name": "league/flysystem"},
     {"name": "league/flysystem-aws-s3-v3"},
     {"name": "livewire/livewire"},
     {"name": "meilisearch/meilisearch-php"},
