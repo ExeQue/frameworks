@@ -13,6 +13,9 @@ devtools:
       method: directoryExists
     - kind: filesystem
       class: League\Flysystem\Filesystem
+      method: has
+    - kind: filesystem
+      class: League\Flysystem\Filesystem
       method: read
     - kind: filesystem
       class: League\Flysystem\Filesystem
