@@ -186,6 +186,7 @@
     {"name": "stripe/stripe-php"},
     {"name": "symfony/amqp-messenger"},
     {"name": "symfony/beanstalkd-messenger"},
+    {"name": "symfony/console"},
     {"name": "symfony/http-foundation"},
     {"name": "symfony/http-kernel"},
     {"name": "symfony/mercure-bundle"},
