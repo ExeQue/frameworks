@@ -1,0 +1,12 @@
+name: inertia
+label: Inertia.js
+detect:
+  composer: [inertiajs/inertia-laravel]
+  npm: ["@inertiajs/vue3", "@inertiajs/react", "@inertiajs/svelte", "@inertiajs/inertia"]
+events:
+  - event: inertia:invalid
+    label: Inertia invalid response
+    message: detail.response.status
+  - event: inertia:exception
+    label: Inertia exception
+    message: detail.exception.message

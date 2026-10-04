@@ -1,0 +1,12 @@
+name: turbo
+label: Hotwire Turbo
+detect:
+  composer: [symfony/ux-turbo]
+  npm: ["@hotwired/turbo", "@hotwired/turbo-rails"]
+events:
+  - event: turbo:fetch-request-error
+    label: Turbo request failed
+    message: detail.error.message
+  - event: turbo:frame-missing
+    label: Turbo frame missing
+    message: detail.response.status

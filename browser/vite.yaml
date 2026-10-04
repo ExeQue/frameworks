@@ -1,0 +1,8 @@
+name: vite
+label: Vite
+detect:
+  npm: [vite]
+events:
+  - event: vite:preloadError
+    label: Vite chunk failed to load
+    message: payload.message
