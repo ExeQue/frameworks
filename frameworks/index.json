@@ -197,6 +197,7 @@
     {"name": "symfony/panther"},
     {"name": "symfony/redis-messenger"},
     {"name": "symfony/scheduler"},
+    {"name": "symfony/security-core"},
     {"name": "tempest/command-bus"},
     {"name": "tempest/database"},
     {"name": "twig/twig"},
