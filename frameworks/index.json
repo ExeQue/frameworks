@@ -214,6 +214,7 @@
     {"name": "typo3/cms-core"},
     {"name": "typo3/cms-scheduler"},
     {"name": "vladimir-yuldashev/laravel-queue-rabbitmq"},
+    {"name": "webonyx/graphql-php"},
     {"name": "yiisoft/yii2"}
   ]
 }
