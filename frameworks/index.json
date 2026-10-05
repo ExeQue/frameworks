@@ -190,16 +190,19 @@
     {"name": "symfony/panther"},
     {"name": "symfony/redis-messenger"},
     {"name": "symfony/scheduler"},
+    {"name": "symfony/ux-turbo"},
     {"name": "tempest/command-bus"},
     {"name": "tempest/database"},
     {"name": "typesense/typesense-php"},
     {"name": "typo3/cms-scheduler"},
-    {"name": "vladimir-yuldashev/laravel-queue-rabbitmq"}
-  ],
-  "browser_presets": [
-    {"name": "htmx"},
-    {"name": "inertia"},
-    {"name": "turbo"},
-    {"name": "vite"}
+    {"name": "vladimir-yuldashev/laravel-queue-rabbitmq"},
+    {"name": "@hotwired/turbo", "type": "npm"},
+    {"name": "@hotwired/turbo-rails", "type": "npm"},
+    {"name": "@inertiajs/inertia", "type": "npm"},
+    {"name": "@inertiajs/react", "type": "npm"},
+    {"name": "@inertiajs/svelte", "type": "npm"},
+    {"name": "@inertiajs/vue3", "type": "npm"},
+    {"name": "htmx.org", "type": "npm"},
+    {"name": "vite", "type": "npm"}
   ]
 }

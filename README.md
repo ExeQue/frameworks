@@ -263,6 +263,32 @@ removes:
   doctor: [horizon_supervisor]
 ```
 
+#### Browser events
+
+A frontend library reports what goes wrong through DOM events of its own, which
+lerd's browser capture records once it knows their names. The package that ships
+the library declares them in a `browser:` block, and lerd offers them as a preset
+for any project that requires the package:
+
+```yaml
+package: "@inertiajs/vue3"
+type: npm                  # optional: composer (the default) or npm
+browser:
+  preset: inertia          # packages sharing a preset are offered as one
+  label: Inertia.js
+  events:
+    - event: inertia:invalid
+      label: Inertia invalid response
+      message: detail.response.status   # where in the event the message is
+```
+
+An npm package lives in `packages/npm-<scope>-<name>.yaml`, its scope's `@`
+dropped (`npm-inertiajs-vue3.yaml`, `npm-vite.yaml`), and is listed in the index
+as `{"name": "@inertiajs/vue3", "type": "npm"}`. A lerd that predates `type`
+only looks a package up once composer has installed it, which an npm name never
+is, and reads a composer package's file without the keys it does not know, so a
+`browser:` block reaches only the versions that use it.
+
 The copies a package was lifted out of stay in the version files that already
 shipped them: an install whose binary predates the package layer still reads
 those, and deleting them would take the worker away from it. The package file is
