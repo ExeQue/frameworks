@@ -222,7 +222,11 @@ list meaning every framework. The package wins a name collision with the version
 file, which is what lets an entry move here without being shadowed by the copy
 it left behind. List the package under `packages` in `frameworks/index.json` as
 `{"name": "vendor/package"}`, which is where lerd reads the set from; a file
-nothing lists is never fetched.
+nothing lists is never fetched. Only composer names belong there: every lerd
+since the package layer fetches each entry of `packages` on `lerd update` and
+refuses a name composer could not publish, so anything else, an npm package
+say, gets an index key of its own that those versions never read. The schema
+guard refuses a non-composer name under `packages`.
 
 A capture seam names a method the Debug window should report, for a library
 whose own call is the event rather than the start of one. It belongs to the
