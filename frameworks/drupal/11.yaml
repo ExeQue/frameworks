@@ -219,7 +219,7 @@ devtools:
     - kind: span
       class: Drupal\Core\DrupalKernel
       method: preHandle
-      label: Bootstrap
+      label: Prepare
     - kind: span
       class: Drupal\Core\Http\EventListener\RouterListener
       method: onKernelRequest
