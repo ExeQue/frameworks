@@ -206,6 +206,12 @@ devtools:
     - implements: Drupal\Core\Queue\QueueWorkerInterface
       method: processItem
   captures:
+    # The route's raw parameters, before upcasting, from the attribute Drupal's
+    # router keeps them in, read as the controller is resolved.
+    - kind: route_params
+      class: Drupal\Core\Controller\ControllerResolver
+      method: getController
+      name: arg:1.prop:attributes.method:all._raw_variables.method:all
     - kind: span
       class: Drupal\Core\DrupalKernel
       method: boot

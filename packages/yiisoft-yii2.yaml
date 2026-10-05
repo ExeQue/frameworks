@@ -18,6 +18,11 @@ suggest_packages:
 # or session restore.
 devtools:
   captures:
+    # The parameters the URL resolved to, handed to the module that runs the action.
+    - kind: route_params
+      class: yii\base\Module
+      method: runAction
+      name: arg:2
     - kind: span
       class: yii\base\Application
       method: __construct

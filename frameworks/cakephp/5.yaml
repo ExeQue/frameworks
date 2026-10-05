@@ -151,6 +151,11 @@ devtools:
     - implements: Cake\Queue\Job\JobInterface
       method: execute
   captures:
+    # The routing parameters the request carries once a route matched.
+    - kind: route_params
+      class: Cake\Controller\ControllerFactory
+      method: invoke
+      name: arg:1.method:getRequest.method:getAttributes.params
     - kind: span
       class: Cake\Http\Server
       method: bootstrap

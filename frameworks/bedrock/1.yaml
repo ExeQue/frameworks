@@ -95,6 +95,11 @@ devtools:
       method: execute
       name: this.method:get_hook
   captures:
+    # The query variables the request resolved to, a post's name or a category.
+    - kind: route_params
+      class: WP
+      method: send_headers
+      name: this.prop:query_vars
     - kind: span
       class: WP
       method: query_posts

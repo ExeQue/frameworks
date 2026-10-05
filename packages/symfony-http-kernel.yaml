@@ -13,6 +13,12 @@ suggest_packages:
 # the view listeners after it) and the work done after the response went out.
 devtools:
   captures:
+    # The matched route's raw parameters, read once routing has put them on the
+    # request, so the Debug window can mask one in the path by its name.
+    - kind: route_params
+      class: Symfony\Component\HttpKernel\Controller\ControllerResolver
+      method: getController
+      name: arg:1.prop:attributes.method:all._route_params
     - kind: span
       class: Symfony\Component\HttpKernel\Kernel
       method: boot
