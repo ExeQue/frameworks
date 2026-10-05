@@ -284,10 +284,11 @@ browser:
 
 An npm package lives in `packages/npm-<scope>-<name>.yaml`, its scope's `@`
 dropped (`npm-inertiajs-vue3.yaml`, `npm-vite.yaml`), and is listed in the index
-as `{"name": "@inertiajs/vue3", "type": "npm"}`. A lerd that predates `type`
-only looks a package up once composer has installed it, which an npm name never
-is, and reads a composer package's file without the keys it does not know, so a
-`browser:` block reaches only the versions that use it.
+under `npm_packages` rather than `packages`: a lerd that predates npm packages
+fetches every entry of `packages` on `lerd update` and would count an npm name
+as a failure, while it never reads a key it does not know. It also reads a
+composer package's file without the keys it does not know, so a `browser:`
+block reaches only the versions that use it.
 
 The copies a package was lifted out of stay in the version files that already
 shipped them: an install whose binary predates the package layer still reads

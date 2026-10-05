@@ -195,14 +195,16 @@
     {"name": "tempest/database"},
     {"name": "typesense/typesense-php"},
     {"name": "typo3/cms-scheduler"},
-    {"name": "vladimir-yuldashev/laravel-queue-rabbitmq"},
-    {"name": "@hotwired/turbo", "type": "npm"},
-    {"name": "@hotwired/turbo-rails", "type": "npm"},
-    {"name": "@inertiajs/inertia", "type": "npm"},
-    {"name": "@inertiajs/react", "type": "npm"},
-    {"name": "@inertiajs/svelte", "type": "npm"},
-    {"name": "@inertiajs/vue3", "type": "npm"},
-    {"name": "htmx.org", "type": "npm"},
-    {"name": "vite", "type": "npm"}
+    {"name": "vladimir-yuldashev/laravel-queue-rabbitmq"}
+  ],
+  "npm_packages": [
+    {"name": "@hotwired/turbo"},
+    {"name": "@hotwired/turbo-rails"},
+    {"name": "@inertiajs/inertia"},
+    {"name": "@inertiajs/react"},
+    {"name": "@inertiajs/svelte"},
+    {"name": "@inertiajs/vue3"},
+    {"name": "htmx.org"},
+    {"name": "vite"}
   ]
 }
