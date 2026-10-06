@@ -283,7 +283,7 @@ browser:
   events:
     - event: inertia:invalid
       label: Inertia invalid response
-      message: detail.response.status   # where in the event the message is
+      message: detail.response          # where in the event the message is
 ```
 
 An npm package lives in `packages/npm-<scope>-<name>.yaml`, its scope's `@`
